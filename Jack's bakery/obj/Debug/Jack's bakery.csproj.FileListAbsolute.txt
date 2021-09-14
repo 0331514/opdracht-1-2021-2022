@@ -1,0 +1,10 @@
+C:\Users\slwaa\source\repos\opdracht-1-2021-2022\Jack's bakery\bin\Debug\Jack_s_bakery.exe.config
+C:\Users\slwaa\source\repos\opdracht-1-2021-2022\Jack's bakery\bin\Debug\Jack_s_bakery.exe
+C:\Users\slwaa\source\repos\opdracht-1-2021-2022\Jack's bakery\bin\Debug\Jack_s_bakery.pdb
+C:\Users\slwaa\source\repos\opdracht-1-2021-2022\Jack's bakery\obj\Debug\Jack's bakery.csprojAssemblyReference.cache
+C:\Users\slwaa\source\repos\opdracht-1-2021-2022\Jack's bakery\obj\Debug\Jack_s_bakery.Form1.resources
+C:\Users\slwaa\source\repos\opdracht-1-2021-2022\Jack's bakery\obj\Debug\Jack_s_bakery.Properties.Resources.resources
+C:\Users\slwaa\source\repos\opdracht-1-2021-2022\Jack's bakery\obj\Debug\Jack's bakery.csproj.GenerateResource.cache
+C:\Users\slwaa\source\repos\opdracht-1-2021-2022\Jack's bakery\obj\Debug\Jack's bakery.csproj.CoreCompileInputs.cache
+C:\Users\slwaa\source\repos\opdracht-1-2021-2022\Jack's bakery\obj\Debug\Jack_s_bakery.exe
+C:\Users\slwaa\source\repos\opdracht-1-2021-2022\Jack's bakery\obj\Debug\Jack_s_bakery.pdb
