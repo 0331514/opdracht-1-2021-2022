@@ -13,6 +13,7 @@ namespace Jack_s_bakery
     public partial class Form1 : Form
     {
         Balk objBalk;
+        Cilinder objCilinder;
 
         public Form1()
         {
@@ -33,6 +34,11 @@ namespace Jack_s_bakery
 
             try
             {
+                if (radioButton1.Checked)
+                {
+                    objCilinder = new Cilinder(doubleBreedte, doubleHoogte);
+                } else
+
               objBalk = new Balk(doubleLengte, doubleBreedte, doubleHoogte);
             }
             catch(Exception ex)
@@ -49,18 +55,54 @@ namespace Jack_s_bakery
                 bon();
             }
         }
-
+      
         void bon()
         {
             string kubusBalk;
-            if (objBalk.Iskubus == true)
+            string uitkomst;
+            string kosten;
+
+            
+            if (radioButton1.Checked)
+            {
+                kubusBalk = "Cilindervormige bloembak";
+                uitkomst = "Inhoud bloembak: " + objCilinder.VolumeCilinder + "m3";
+            }
+            else if (objBalk.Iskubus == true)
             {
                 kubusBalk = "Kubusvormige bloembak";
+                uitkomst = "Inhoud bloembak: " + objBalk.Volume + "m3";
             }
             else
+            {
                 kubusBalk = "Balkvormige bloembak";
+                uitkomst = "Inhoud bloembak: " + objBalk.Volume + "m3";
+            }
 
-            txtBon.Text = "";
+            if (objBalk.Volume <= 0.2)
+            {
+                kosten = "$40";
+            }
+            else if (objBalk.Volume >= 0.2 && objBalk.Volume <= 0.4)
+            {
+                kosten = "$80";
+            }
+            else if (objBalk.Volume >= 0.4 && objBalk.Volume <= 0.6)
+            {
+                kosten = "$140";
+            }
+            else if (objBalk.Volume >= 0.6 && objBalk.Volume <= 0.8)
+            {
+                kosten = "$210";
+            }
+            else 
+            {
+                kosten = "$250";
+            }
+            
+           
+
+                txtBon.Text = "";
 
             txtBon.Text = "Klant: " + Environment.NewLine
             + txtVoornaam.Text + " " + txtTussenvoegsel.Text + " " + txtAchternaam.Text + Environment.NewLine
@@ -69,8 +111,17 @@ namespace Jack_s_bakery
             + Environment.NewLine + "Bestelling: " + kubusBalk
             + Environment.NewLine + "Lengte: " + txtLengte.Text + Environment.NewLine + "Breedte: " + txtBreedte.Text + Environment.NewLine + "Hoogte: " + txtHoogte.Text
             + Environment.NewLine
-            + Environment.NewLine + "Inhoud Bloembak: " + objBalk.Volume + " m3";
+            + Environment.NewLine
+            + uitkomst
+            + Environment.NewLine
+            + "Prijs van de pot: " + kosten;
+
+            
 
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            txtLengte.Enabled = false;
     }
-}
+}}

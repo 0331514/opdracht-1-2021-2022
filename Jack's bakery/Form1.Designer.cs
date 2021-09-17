@@ -54,12 +54,14 @@ namespace Jack_s_bakery
             this.txtTussenvoegsel = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBon = new System.Windows.Forms.TextBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.radioButton1);
             this.groupBox2.Controls.Add(this.btnBestel);
             this.groupBox2.Controls.Add(this.txtPostcode);
             this.groupBox2.Controls.Add(this.label9);
@@ -288,6 +290,18 @@ namespace Jack_s_bakery
             this.txtBon.Size = new System.Drawing.Size(370, 251);
             this.txtBon.TabIndex = 0;
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(37, 141);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(141, 21);
+            this.radioButton1.TabIndex = 22;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Wilt u een cilinder";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -296,7 +310,7 @@ namespace Jack_s_bakery
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "oo";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -332,6 +346,7 @@ namespace Jack_s_bakery
         private System.Windows.Forms.TextBox txtTussenvoegsel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBon;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
 

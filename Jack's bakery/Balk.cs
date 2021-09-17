@@ -32,7 +32,7 @@ namespace Jack_s_bakery
         {
             get
             {
-                return (Lengte * Breedte * Hoogte) / 1000;
+                return (Lengte * Breedte * Hoogte) / 100000;
             }
         }
 
