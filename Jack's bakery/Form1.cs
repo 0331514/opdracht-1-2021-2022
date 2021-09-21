@@ -44,11 +44,13 @@ namespace Jack_s_bakery
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                this.Close();
             }
 
             if(txtVoornaam.Text == "" || txtAchternaam.Text == "" || txtAdres.Text == "" || txtPostcode.Text == "")
             {
                 MessageBox.Show("Vul alle velden in!");
+                this.Close();
             }
             else
             {
@@ -58,50 +60,77 @@ namespace Jack_s_bakery
       
         void bon()
         {
+           
             string kubusBalk;
             string uitkomst;
             string kosten;
-
+            
             
             if (radioButton1.Checked)
             {
                 kubusBalk = "Cilindervormige bloembak";
                 uitkomst = "Inhoud bloembak: " + objCilinder.VolumeCilinder + "m3";
+                pictureBox1.Image = Properties.Resources.cilinder2;
             }
             else if (objBalk.Iskubus == true)
             {
                 kubusBalk = "Kubusvormige bloembak";
                 uitkomst = "Inhoud bloembak: " + objBalk.Volume + "m3";
+                pictureBox1.Image = Properties.Resources.kubus;
             }
             else
             {
                 kubusBalk = "Balkvormige bloembak";
                 uitkomst = "Inhoud bloembak: " + objBalk.Volume + "m3";
+                pictureBox1.Image = Properties.Resources.rechthoekig_balk;
             }
-
-            if (objBalk.Volume <= 0.2)
+            if (radioButton1.Checked)
             {
-                kosten = "$40";
+                if (objCilinder.VolumeCilinder <= 0.2)
+                {
+                    kosten = "$40";
+                }
+                else if (objCilinder.VolumeCilinder >= 0.2 && objCilinder.VolumeCilinder <= 0.4)
+                {
+                    kosten = "$80";
+                }
+                else if (objCilinder.VolumeCilinder >= 0.4 && objCilinder.VolumeCilinder <= 0.6)
+                {
+                    kosten = "$140";
+                }
+                else if (objCilinder.VolumeCilinder >= 0.6 && objCilinder.VolumeCilinder <= 0.8)
+                {
+                    kosten = "$210";
+                }
+                else
+                {
+                    kosten = "$250";
+                }
             }
-            else if (objBalk.Volume >= 0.2 && objBalk.Volume <= 0.4)
+            else
             {
-                kosten = "$80";
-            }
-            else if (objBalk.Volume >= 0.4 && objBalk.Volume <= 0.6)
-            {
-                kosten = "$140";
-            }
-            else if (objBalk.Volume >= 0.6 && objBalk.Volume <= 0.8)
-            {
-                kosten = "$210";
-            }
-            else 
-            {
-                kosten = "$250";
+                if (objBalk.Volume <= 0.2)
+                {
+                    kosten = "$40";
+                }
+                else if (objBalk.Volume >= 0.2 && objBalk.Volume <= 0.4)
+                {
+                    kosten = "$80";
+                }
+                else if (objBalk.Volume >= 0.4 && objBalk.Volume <= 0.6)
+                {
+                    kosten = "$140";
+                }
+                else if (objBalk.Volume >= 0.6 && objBalk.Volume <= 0.8)
+                {
+                    kosten = "$210";
+                }
+                else
+                {
+                    kosten = "$250";
+                }
             }
             
-           
-
                 txtBon.Text = "";
 
             txtBon.Text = "Klant: " + Environment.NewLine
@@ -124,4 +153,10 @@ namespace Jack_s_bakery
         {
             txtLengte.Enabled = false;
     }
-}}
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
